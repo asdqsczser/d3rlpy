@@ -191,9 +191,9 @@ class MDPDataset:
         if len(observations.shape) == 4:
             assert observations.dtype == np.uint8,\
                 'Image observation must be uint8 array.'
-        else:
-            if observations.dtype != np.float32:
-                observations = np.asarray(observations, dtype=np.float32)
+        # else:
+        #     if observations.dtype != np.float32:
+        #         observations = np.asarray(observations, dtype=np.float32)
 
         self._observations = observations
         self._rewards = np.asarray(rewards, dtype=np.float32).reshape(-1)
