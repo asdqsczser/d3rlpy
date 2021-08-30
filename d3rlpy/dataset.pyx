@@ -313,7 +313,7 @@ class MDPDataset:
             tuple: observation shape.
 
         """
-        return self._observations[0].shape
+        return self._observations[0].shape if hasattr(self._observations[0], "shape") else self._observations[0]['obs'].shape
 
     def is_action_discrete(self):
         """ Returns `discrete_action` flag.
