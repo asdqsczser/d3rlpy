@@ -648,9 +648,9 @@ class Episode:
         if len(observation_shape) == 3:
             assert observations.dtype == np.uint8,\
                 'Image observation must be uint8 array.'
-        else:
-            if observations.dtype != np.float32:
-                observations = np.asarray(observations, dtype=np.float32)
+        # else:
+        #     if observations.dtype != np.float32:
+        #         observations = np.asarray(observations, dtype=np.float32)
 
         # fix action dtype and shape
         if len(actions.shape) == 1:
